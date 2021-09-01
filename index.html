@@ -6,10 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Archive</title>
+    <!--------------------------------- bootstrap css cdn link --------------------------------->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
-    <h2>Book Archive</h2>
+    <section class="container">
+        <h2 class="text-center text-success">Search your favorite Book</h2>
+
+        <!--------------------------------- Book search area start------------------------------------->
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input id="search-field" type="text" class="form-control" placeholder="Search the book you want"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="searchTeam()" class="btn btn-secondary" type="button" id="button-search">Search</button>
+        </div>
+        <!---------------------------------- Book search area ended  ----------------------------------->
+
+
+        <!--------------------------------- result Found number star ----------------------------------->
+        <h4 class=" text-dark text-center m-4 -p-2" id="result-numbers"></h4>
+        <!--------------------------------- result Found number ended ---------------------------------->
+
+
+        <!---------------------------------- book container start -------------------------------------->
+        <div id="book-container" class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+        <!---------------------------------- book container endde --------------------------------------->
+
+        <!----------------------------------- spiner and error ----------------------------------------->
+        <div class="d-flex justify-content-center p-5 d-none" id="spinner">
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="p-4 text-danger text-center d-none" id="error">
+            <h2>No Result Found</h2>
+            <p>please search a valid book name</p>
+        </div>
+        <div class="p-4 m-5 text-danger text-center d-none" id="empty-error">
+            <h4>Please Input a Book Name</h4>
+        </div>
+
+
+
+
+
+
+        <!---------------------------------- book container ended -------------------------------------->
+    </section>
 
 
 
