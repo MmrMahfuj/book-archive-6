@@ -3,17 +3,19 @@ const bookContainer = document.getElementById('book-container');
 
 // fetch data loaded 
 const searchTeam = () => {
+    // cleaning
     document.getElementById('empty-error').classList.add('d-none');
     bookContainer.textContent = '';
     document.getElementById('spinner').classList.remove('d-none');
     document.getElementById('error').classList.add('d-none');
+    document.getElementById('result-numbers').innerText = '';
 
     const searchText = document.getElementById('search-field').value;
     if (searchText === '') {
         emptySearch();
     }
     else {
-        fetch(`http://openlibrary.org/search.json?q=${searchText}`)
+        fetch(`https://openlibrary.org/search.json?q=${searchText}`)
             .then(res => res.json())
             .then(data => dataFilter(data.docs))
     }
@@ -41,8 +43,6 @@ const dataFilter = (allData) => {
             document.getElementById('spinner').classList.add('d-none');
         }
         else {
-            // clean 
-            document.getElementById('result-numbers').innerText = '';
 
             // result count 
             document.getElementById('result-numbers').innerText = `Fount your result:- ${allBooks.length} Books`;
@@ -82,4 +82,5 @@ const displaybooks = (allBooks) => {
 const emptySearch = () => {
     document.getElementById('empty-error').classList.remove('d-none');
     document.getElementById('spinner').classList.add('d-none');
+    document.getElementById('result-numbers').innerText = '';
 }
