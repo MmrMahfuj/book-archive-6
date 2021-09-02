@@ -57,7 +57,7 @@ const displaybooks = (allBooks) => {
         div.classList.add('col')
         div.innerHTML = ` 
         <div class="card h-100 shadow text-center">
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : ''}-M.jpg" class="card-img-top" alt="...">
+            <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : ''}-M.jpg" class="card-img-top" height="400" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Book Name: ${book.title}</h5>
                 <p class="card-text">Author Name: ${book.author_name[0]}</p>
