@@ -26,14 +26,12 @@ const searchTeam = () => {
 const dataFilter = (allData) => {
     document.getElementById('search-field').value = '';
     console.log(allData);
-
-
+    //error handle
     if (allData.length === 0) {
         document.getElementById('error').classList.remove('d-none');
         document.getElementById('spinner').classList.add('d-none');
     }
     else {
-
         //  data filtering 
         const allBooks = allData.filter(allData => allData.cover_i !== undefined && allData.first_publish_year !== undefined && allData.title !== undefined && allData.author_name !== undefined && allData.publisher !== undefined)
 
@@ -43,7 +41,6 @@ const dataFilter = (allData) => {
             document.getElementById('spinner').classList.add('d-none');
         }
         else {
-
             // result count 
             document.getElementById('result-numbers').innerText = `Fount your result:- ${allBooks.length} Books`;
 
@@ -53,10 +50,8 @@ const dataFilter = (allData) => {
 
 }
 
+//display books
 const displaybooks = (allBooks) => {
-
-
-
     allBooks.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col')
@@ -67,8 +62,7 @@ const displaybooks = (allBooks) => {
                 <h5 class="card-title">Book Name: ${book.title}</h5>
                 <p class="card-text">Author Name: ${book.author_name[0]}</p>
                 <p class="card-text">publisher: ${book.publisher[0]}</p>
-                <p class="card-text">first publish year: ${book.first_publish_year}</p>
-                
+                <p class="card-text">first publish year: ${book.first_publish_year}</p> 
             </div>
         </div>    
         `;
@@ -77,7 +71,7 @@ const displaybooks = (allBooks) => {
     })
 }
 
-
+//error massege function
 const emptySearch = () => {
     document.getElementById('empty-error').classList.remove('d-none');
     document.getElementById('spinner').classList.add('d-none');
