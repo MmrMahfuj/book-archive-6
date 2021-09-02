@@ -25,7 +25,6 @@ const searchTeam = () => {
 // filtering data and handling errro
 const dataFilter = (allData) => {
     document.getElementById('search-field').value = '';
-    console.log(allData);
     //error handle
     if (allData.length === 0) {
         document.getElementById('error').classList.remove('d-none');
@@ -35,7 +34,6 @@ const dataFilter = (allData) => {
         //  data filtering 
         const allBooks = allData.filter(allData => allData.cover_i !== undefined && allData.first_publish_year !== undefined && allData.title !== undefined && allData.author_name !== undefined && allData.publisher !== undefined)
 
-        console.log(allBooks);
         if (allBooks.length === 0) {
             document.getElementById('error').classList.remove('d-none');
             document.getElementById('spinner').classList.add('d-none');
