@@ -42,7 +42,7 @@ const dataFilter = (allData) => {
         }
         else {
             // result count 
-            document.getElementById('result-numbers').innerText = `Fount your result:- ${allBooks.length} Books`;
+            document.getElementById('result-numbers').innerText = `Found your result:- ${allBooks.length} Books`;
 
             displaybooks(allBooks);
         }
