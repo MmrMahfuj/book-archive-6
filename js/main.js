@@ -22,7 +22,7 @@ const searchTeam = () => {
 }
 
 
-// display data 
+// filtering data and handling errro
 const dataFilter = (allData) => {
     document.getElementById('search-field').value = '';
     console.log(allData);
@@ -35,7 +35,7 @@ const dataFilter = (allData) => {
     else {
 
         //  data filtering 
-        const allBooks = allData.filter(allData => allData.cover_i !== undefined && allData.first_publish_year !== undefined && allData.title !== undefined && allData.author_name !== undefined && allData.publisher !== undefined && allData.publish_date !== undefined)
+        const allBooks = allData.filter(allData => allData.cover_i !== undefined && allData.first_publish_year !== undefined && allData.title !== undefined && allData.author_name !== undefined && allData.publisher !== undefined)
 
         console.log(allBooks);
         if (allBooks.length === 0) {
@@ -64,11 +64,10 @@ const displaybooks = (allBooks) => {
         <div class="card h-100 shadow">
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : ''}-M.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Title: ${book.title}</h5>
-                <p class="card-text">Author: ${book.author_name}</p>
-                <p class="card-text">First Publisher: ${book.publish_date[0]}</p>
-                <p class="card-text">publisher: ${book.publisher}</p>
-                <p class="card-text">first publisher year: ${book.first_publish_year}</p>
+                <h5 class="card-title">Book Name: ${book.title}</h5>
+                <p class="card-text">Author Name: ${book.author_name[0]}</p>
+                <p class="card-text">publisher: ${book.publisher[0]}</p>
+                <p class="card-text">first publish year: ${book.first_publish_year}</p>
                 
             </div>
         </div>    
